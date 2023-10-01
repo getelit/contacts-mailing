@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Рассылка сообщений</title>
+</head>
+<body>
+    <div class="tab-wrapper">
+        <div class="tab" id="leasing-companies-tab">
+            <button id="leasing-companies-btn">Лизинговые компании</button>
+        </div>
+        <div class="tab" id="suppliers-tab">
+            <button id="suppliers-btn">Поставщики</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="left-column">
+                <form action="" id="form" class="form-body">
+                    <h2>Просмотр составленного письма</h2>
+                    <textarea id="msg-form" rows="15" cols="74" placeholder="Текст письма..."></textarea>
+                </form>
+                <button id="log-story-btn">История рассылок</button>
+                <textarea id="log-story" rows="17" cols="74" readonly></textarea>
+            </div>
+            <div class="right-column">
+                <div class="selection-row">
+                    <div class="rectangle">
+                        <h3>Выбрать компании</h3>
+                    </div>
+                    <button id="select-companies-btn">
+                        <h3 class="select-btn-text" id="select-companies-btn-text">Не выбрано</h3>
+                        <span class="arrow-symbol">▼</span>
+                    </button>
+                    <div class="window" id="companies-window">
+                        <div class="search">
+                            <input id="search-companies" type="text" onkeyup="companiesSearch()">
+                            <span class="clear-input-symbol">
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </div>
+                        <ul class="list" id="companies-list">
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="selection-row">
+                    <div class="rectangle">
+                        <h3>Выбрать контакты</h3>
+                    </div>
+                    <button id="select-contacts-btn">
+                        <h3 class="select-btn-text" id="select-contacts-btn-text">Не выбрано</h3>
+                        <span class="arrow-symbol">▼</span>
+                    </button>
+                    <div class="window" id="contacts-window">
+                        <div class="search">
+                            <input id="search-contacts" type="text" onkeyup="contactsSearch()">
+                            <span class="clear-input-symbol">
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </div>
+                        <ol class="list" id="contacts-list">
+                        </ol>
+                    </div>
+                </div>
+
+                <a href="#" class="green-btn" id="send-form-btn">Отправить</a>
+
+                <div id="log-notifier"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
